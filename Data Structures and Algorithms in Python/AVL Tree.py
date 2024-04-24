@@ -109,3 +109,87 @@ def searchNode(rootNode, nodeValue):
 # algorithm for right left condition
 # rotateRight(disbalancedNode):
 # rotateLeft(disbalancedNode):
+
+def getHeight(rootNode):
+    if not rootNode:
+        return 0
+    return rootNode.height
+
+def rightRotate(disbalancedNode):
+    newRoot = disbalancedNode.leftChild # new root should be less than disbalanced node in value and thus left child of disbalanced node
+    disbalancedNode.leftChild = disbalancedNode.leftChild.rightChild # disbalanced node's left child becomes right child of disbalanced node's new left child
+    newRoot.rightChild = disbalancedNode # disbalanced node shifts to become new root's right child, thus completing the right rotation
+    disbalancedNode.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild)) # update height of disbalanced node to 1 + height of new left or right child of disbalanced node
+    newRoot.height = 1 + max(getHeight(newRoot.leftChild), getHeight(newRoot.rightChild)) # same for newRoot
+    return newRoot # returns new root to notify user that right rotation is successful
+
+def leftRotate(disbalancedNode):
+    newRoot = disbalancedNode.rightChild # identify newRoot as right child of disbalanced node because newRoot is greater than disbalanced node
+    disbalancedNode.rightChild = disbalancedNode.rightChild.leftChild # right child of disbalanced node becomes left child of right child
+    newRoot.leftChild = disbalancedNode # left child of newRoot becomes disbalanced node
+    disbalancedNode.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild)) # extend height of disbalanced node
+    newRoot.height = 1 + max(getHeight(disbalancedNode.leftChild), getHeight(disbalancedNode.rightChild)) # extend height of newRoot
+    return newRoot # returns new root to notify user that left rotation is successful
+
+def getBalance(rootNode):
+    if not rootNode:
+        return 0
+    return getHeight(rootNode.leftChild) - getHeight(rootNode.rightChild) # returns whether AVL tree is balanced, and an AVL tree is balanced if its balance is inclusive between -1 and 1
+
+def insertNode(rootNode, nodeValue):
+    if not rootNode:
+        return AVLNode(nodeValue) # if there isn't a root node, insert one using AVLNode()
+    elif nodeValue < rootNode.data:
+        rootNode.leftChild = insertNode(rootNode.leftChild, nodeValue) # inserting left child because nodeValue is less than rootNode, recursive
+    else:
+        rootNode.rightChild = insertNode(rootNode.rightChild, nodeValue) # inserting right child because nodeValue is greater than or equal to rootNode, recursive
+    rootNode.height = 1 + max(getHeight(rootNode.leftChild), getHeight(rootNode.rightChild)) # extend height of rootNode
+    balance = getBalance(rootNode) # obtain balance of AVL tree to ascertain that AVL tree remains AVL tree
+    if balance > 1 and nodeValue < rootNode.leftChild.data: # left left condition, use right rotate
+        return rightRotate(rootNode) # note that if statement is asking whether balance is greater than 1, implying that height of rootNode.leftChild is greater than that of rootNode.rightChild
+    if balance < 1 and nodeValue > rootNode.leftChild.data: # left right condition, use leftRotate then rightRotate
+        rootNode.leftChild = leftRotate(rootNode.leftChild)
+        return rightRotate(rootNode)
+    if balance < -1 and nodeValue > rootNode.rightChild.data: # right right condition, use leftRotate
+        return leftRotate(rootNode)
+    if balance > -1 and nodeValue > rootNode.rightChild.data: # right left condition, use rightRotate then leftRotate
+        rootNode.rightChild = rightRotate(rootNode.rightChild)
+        return rightRotate(rootNode)
+    return rootNode
+
+def getMinValueNode(rootNode):
+    if rootNode is not None or rootNode.leftChild is not None:
+        return rootNode # return rootNode when it is alone
+    return getMinValueNode(rootNode.leftChild) # recursive, pursuing left-most child because leftChild should be lesser than rootNode
+
+def deleteNode(rootNode, nodeValue):
+    if not rootNode:
+        return rootNode # if only rootNode exists, return rootNode and delete AVL tree
+    elif nodeValue < rootNode.data:
+        rootNode.leftChild = deleteNode(rootNode.leftChild, nodeValue) # recursive, deletes nodeValue in left subtree because leftChild is less than rootNode
+    elif nodeValue > rootNode.data:
+        rootNode.rightChild = deleteNode(rootNode.rightChild, nodeValue) # recursive, deletes nodeValue in right subtree because rightChild is greater than rootNode
+    else:
+        if rootNode.leftChild is None: # if rootNode has no leftChild...
+            temp = rootNode.rightChild # ...initialize temp variable as rightChild of rootNode
+            rootNode = None # assign rootNode to None
+            return temp # return only temp, to delete rootNode, because the else statement is contingent on nodeValue equalling rootNode.data
+        elif rootNode.rightChild is None: # if rootNode has no rightChild...
+            temp = rootNode.leftChild # ...initialize temp variable as leftChild of rootNode
+            rootNode = None # assign rootNode to None
+            return temp # return only temp, to delete rootNode, because the else statement is contingent on nodeValue equalling rootNode.data
+        temp = getMinValueNode(rootNode.rightChild) # assign temp to getMinValueNode of right subtree
+        rootNode.data = temp.data
+        rootNode.rightChild = deleteNode(rootNode.rightChild, temp.data) # recursive, delete specified temp.data given rootNode.rightChild
+    balance = getBalance(rootNode) # obtain balance of edited AVL tree to reassert balance after deletion of temp
+    if balance > 1 and getBalance(rootNode.leftChild) >= 0: # if height of left subtree is greater than that of right subtree and balance of left subtree is greater than or equal to 0...
+        return rightRotate(rootNode) #...implement rightRotate on rootNode; left left condition, rightRotate
+    if balance < -1 and getBalance(rootNode.rightChild) <= 0: # if height of left subtree is lesser than that of right subtree and balance of right subtree is lesser than or equal to 0...
+        return leftRotate(rootNode) #...implement leftRotate on rootNode; right right condition, leftRotate
+    if balance > 1 and getBalance(rootNode.leftChild) < 0: # if height of left subtree is greater than that of right subtree and balance of left subtree is lesser than 0...
+        rootNode.leftChild = leftRotate(rootNode.leftChild) #...implement leftRotate of rootNode.leftChild
+        return rightRotate(rootNode) # then implement rightRotate of rootNode; left right condition, leftRotate, rightRotate
+    if balance < -1 and getBalance(rootNode.rightChild) > 0: # if height of left subtree is lesser than that of right subtree and balance of right subtree is greater than 0...
+        rootNode.rightChild = rightRotate(rootNode.rightChild) #...implement rightRotate of rootNode.rightChild
+        return leftRotate(rootNode) # then implement leftRotate of rootNode; right left condition, rightRotate, leftRotate
+    return rootNode
