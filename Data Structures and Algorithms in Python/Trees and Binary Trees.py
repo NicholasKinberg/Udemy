@@ -35,3 +35,5 @@ class TreeNode:
 # print(tree)
 
 # binary trees are trees that have at most two children per node
+# can implement a binary tree with a linked list or Python list
+# left child and right child will be similar to 2x and 2x+1
