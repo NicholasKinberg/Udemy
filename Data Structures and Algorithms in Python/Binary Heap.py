@@ -28,3 +28,29 @@ def levelOrderTraversal(rootNode):
     else:
         for i in range(1, rootNode.heapSize+1):
             print(rootNode.customList[i]) # will traverse by level because binary heap is either max and decreasing or min and increasing, so program will traverse list in order
+
+def heapifyTreeInsert(rootNode, index, heapType):
+    parentIndex = int(index/2) # turns index into int and divides it by two, assigning it to parentIndex because parentIndex should be at half the index of the given index (parent node, left child, right child)
+    if index <= 1: # if index as given by user is 1 or 0, program simply returns
+        return
+    if heapType == "Min": # but if the binary heap is a minimum binary heap...
+        if rootNode.customList[index] < rootNode.customList[parentIndex]: # if the value of the given index is less than rootNode at half the index value of index...
+            temp = rootNode.customList[index] #...initialize temp variable and assign it to given index
+            rootNode.customList[index] = rootNode.customList[parentIndex] # set given index eqeual to parentIndex, moving index to left subtree
+            rootNode.customList[parentIndex] = temp # set parentIndex equal to temp
+        heapifyTreeInsert(rootNode, parentIndex, heapType) # recursive, insert node at correct position
+        # using recursion in line above to check that entire binary heap is heapified, using parentIndex as index to use recursion on all parentIndex
+    elif heapType == "Max": # maximum binary heap
+        if rootNode.customList[index] > rootNode.customList[parentIndex]:
+            temp = rootNode.customList[index]
+            rootNode.customList[index] = rootNode.customList[parentIndex]
+            rootNode.customList[parentIndex] = temp
+        heapifyTreeInsert(rootNode, parentIndex, heapType)
+
+def insertNode(rootNode, nodeValue, heapType):
+    if rootNode.heapSize + 1 == rootNode.maxSize:
+        return "The binary heap is full"
+    rootNode.customList[rootNode.heapSize + 1] = nodeValue
+    rootNode.heapSize += 1
+    heapifyTreeInsert(rootNode, rootNode.heapSize, heapType)
+    return "The value has been successfully inserted"
