@@ -50,7 +50,7 @@ def heapifyTreeInsert(rootNode, index, heapType):
 def insertNode(rootNode, nodeValue, heapType):
     if rootNode.heapSize + 1 == rootNode.maxSize:
         return "The binary heap is full"
-    rootNode.customList[rootNode.heapSize + 1] = nodeValue
-    rootNode.heapSize += 1
+    rootNode.customList[rootNode.heapSize + 1] = nodeValue # assign nodeValue to last index in list
+    rootNode.heapSize += 1 # extend length of list by 1
     heapifyTreeInsert(rootNode, rootNode.heapSize, heapType)
     return "The value has been successfully inserted"
