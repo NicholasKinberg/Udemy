@@ -14,7 +14,7 @@
 # mod function
 def mod(number, cellNumber): # cellNumber will represent total number of cells for the purposes of this file
     return number % cellNumber # % operator returns remainder
-# if I were to enter mod(400, 24), this would return 16, so we would use 16 as key and 400 as hash value
+# if I were to enter mod(400, 24), this would return 16, so we would use index 16 as key and 400 as hash value
 # mod(400, 24)
 
 # ASCII function
@@ -32,3 +32,19 @@ def modASCII(string, cellNumber):
     # it avoids collisions (where 2 different keys to hash function produce same output)
 
 # collision resolution techniques
+# 1. direct chaining
+# 2. open addressing
+    # 2.1. linear probing
+    # 2.2. quadratic probing
+    # 2.3. double hasing
+
+# direct chaining: implement buckets as linked list
+    # implement linked list for single index position, linking keys that have same value
+
+# open addressing: colliding elements are stored in other vacant buckets; for storage and lookup, we use "probing"
+    # linear probing: places new key into closest following empty cell; so A goes to index[2], B goes to index[3] instead of index[2], and so on
+    # quadratic probing: adding arbitrary quadratic polynomial to index until empty cell is found (adding squares of integers to index positions to obtain other index positions)
+    # double hashing: interval between probes is computed by another hash function, so more than one hash function
+
+# hash table can be full when size is preset, but this won't happen if one uses direct chaining (linked lists to link keys with same indices together)
+# if hash table is full, can use open addressing to double the size of the hash table and recall hashing for current keys
