@@ -1,3 +1,5 @@
+import math as math
+
 # sorting is arranging data in particular format, either ascending or descending
 # types of sorting:
     # space used
@@ -57,3 +59,21 @@ def insertionSort(customList):
         # number of buckets = round(sqrt(number of elements))
         # appropriate bucket = cell(value * number of buckets / maxValue)
         # sort all buckets (using any sorting algorithm)
+
+def bucketSort(customList):
+    numberOfBuckets = round(math.sqrt(len(customList))) # number of buckets will be the round(sqrt) of length of customList
+    maxValue = max(customList) # save maxValue of customList
+    arr = [] # initialize empty array
+    for i in range(numberOfBuckets): # append an array for each of the buckets you have
+        arr.append([]) # append empty list to arr for each bucket
+    for j in customList:
+        index_b = math.ceil(j*numberOfBuckets/maxValue) # ceil() rounds number up to the next integer that is either bigger than or equal to the value that is being supplied to it
+        arr[index_b-1].append(j) # appends number (j) to appropriate bucket in arr
+    for i in range(numberOfBuckets):
+        arr[i] = insertionSort(arr[i]) # inserting certain numbers from array into certain buckets
+    k = 0 # counter variable
+    for i in range(numberOfBuckets): # iterate over each bucket in array
+        for j in range(len(arr[i])): # iterate over each number in bucket
+            customList[k] = arr[i][j] # place number in correct position in original customList
+            k += 1 # then increment counter variable k because k is index position in customList
+    return customList
