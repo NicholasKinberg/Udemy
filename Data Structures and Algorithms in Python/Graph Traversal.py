@@ -26,8 +26,8 @@ class Graph:
     def removeEdge(self, vertex1, vertex2):
         if vertex1 in self.gdict.keys() and vertex2 in self.gdict.keys():
             try:
-                self.gdict[vertex1].remove(vertex2)
-                self.gdict[vertex2].remove(vertex1)
+                self.gdict[vertex1].remove(vertex2) # removes edge connecting to vertex 2 from vertex 1
+                self.gdict[vertex2].remove(vertex1) # removes edge connecting to vertex 1 from vertex 2
             except ValueError:
                 pass
             return True
@@ -36,7 +36,7 @@ class Graph:
     def removeVertex(self, vertex):
         if vertex in self.gdict.keys():
             for other_vertex in self.gdict[vertex]:
-                self.gdict[other_vertex].remove(vertex)
+                self.gdict[other_vertex].remove(vertex) # remove vertex connected to other_vertex
             del self.gdict[vertex]
             return True
         return False
