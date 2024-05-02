@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 import math as math
 
 # sorting is arranging data in particular format, either ascending or descending

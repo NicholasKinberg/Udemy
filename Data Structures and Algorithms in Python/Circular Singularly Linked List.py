@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # pseudocode for circular singularly linked list
 # need at least two classes, one for the individual nodes, one for the entire CSLL
 # node class:

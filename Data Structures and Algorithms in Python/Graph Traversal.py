@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # breadth first search (BFS), searching laterally
 # depth first search (DFS), searching vertically (to the end of each subtree and then moving to the next one)
 class Graph:

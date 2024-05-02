@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # It is used to find the shortest paths between all pairs of nodes in a weighted graph. 
 # This algorithm is highly efficient and can handle graphs with both positive and negative edge weights, making it a versatile tool for solving a wide range of network and connectivity problems.
 # floyd warshall computes distance between all vertices whereas dijkstra and bellman ford only do so for one vertex going to all

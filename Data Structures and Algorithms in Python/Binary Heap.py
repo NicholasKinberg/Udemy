@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # binary heap can be min or max; if min binary heap, root node must be min of entire binary heap and recursively true across binary heap
 # binary heap is a complete tree (all levels completely filled except possibly last level and last level has all keys as left as possible)
 # as a result, binary heaps can be stored in arrays

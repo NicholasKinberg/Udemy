@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # binary search tree
 # each node has two children at most
 # left child has value less than parent node

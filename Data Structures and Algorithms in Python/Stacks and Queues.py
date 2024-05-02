@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # describe how you would use a single python list to implement three stacks
 stack = []
 # stack uses last-in, first-out format

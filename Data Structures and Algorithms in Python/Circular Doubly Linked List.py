@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # circular doubly linked list goes back and forth, in a circle (like a metro system)
 from random import randint
 class Node:

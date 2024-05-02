@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # minimum spanning tree (MST) is subset of edges of connected, weighted, and undirected graph which:
     # connects all vertices together
     # no cycle

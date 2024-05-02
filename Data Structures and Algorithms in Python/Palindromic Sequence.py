@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # functions to take a list of int, reverse that list, and ask whether the original equals the reverse
 # one function to do all of this, function should take list of int
 def palindrome(n):

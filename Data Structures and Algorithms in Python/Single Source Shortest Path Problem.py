@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # single source shortest path (SSSP) problem: find path between a given vertex (called source) to all other vertices in graph such that total distance between them (source and destination) is minimum
     # BFS
         # enqueue any starting vertex

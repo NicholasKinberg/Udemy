@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # topological sort: sorts given actions in such a way that if there is a dependency of one action on another, then the dependent action always comes later than parent action
 # topological sort algorithm implemented as stack
 # pseudocode:

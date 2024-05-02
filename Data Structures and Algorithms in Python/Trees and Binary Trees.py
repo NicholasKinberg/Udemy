@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # tree is nonlinear data structure with hierarchical relationships between its elements without having any cycle, basically reversed from real-life tree
 # tree is like a menu: you want coffee -> size -> flavor -> etc.
 # properties:

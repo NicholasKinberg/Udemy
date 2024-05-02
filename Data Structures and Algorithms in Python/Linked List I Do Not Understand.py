@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 class Node:
     def __init__(self, data, value=0):
         # Node will be individual element that, when linked together, will form linked list

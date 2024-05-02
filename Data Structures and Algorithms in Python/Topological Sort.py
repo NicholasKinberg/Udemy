@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # topological sorting is typically acyclic (directed acyclic graph (DAG))
 # here too we will use a dictionary to build a topological sort algorithm, notice that algorithms usually use dictionaries
 # recursive implementation of topological sort algorithm

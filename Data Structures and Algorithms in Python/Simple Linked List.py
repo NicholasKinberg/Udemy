@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 class Node:
     # need functions for insertion, deletion, traversal, search
     def __init__(self, data, next=None):

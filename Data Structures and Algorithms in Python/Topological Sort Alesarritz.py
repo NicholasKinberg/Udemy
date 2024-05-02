@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 from queue import Queue
 import unittest
 # two queues: order queue and processing queue, one for ordering, one for taking nodes out of DAG and putting into order in order queue

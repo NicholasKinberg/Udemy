@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # recursion is a way of solving a problem by having the function call itself
 # used when solution lies in smaller instance to same problem
 # like a Russian nesting doll

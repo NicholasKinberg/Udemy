@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 ### Write a program to find all pairs of integers whose sum equals given number
 # def pairs_equal_number(list, n):
 #     #new_list = []

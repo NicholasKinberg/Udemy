@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 x = True
 floors = [1,3]
 # the above two lines are examples of attributes

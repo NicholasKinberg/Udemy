@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # Problem Statement: Given a directed graph and two nodes (S and E), design an algorithm to find out whether there is a route from S to E.
 # using breadth first search to ascertain whether there is a route between two nodes in a directed acyclic graph
 # pseudocode:

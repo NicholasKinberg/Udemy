@@ -1,4 +1,8 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # Problem statement: Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 a =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15]
 
 def childNodes(i):

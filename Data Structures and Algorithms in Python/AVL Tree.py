@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # An AVL tree defined as a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees for any node cannot be more than one.
 # nothing to do with values, everything to do with number of nodes that are left and right children
 # use balancing through rotation to restore balance between -1 and 1 to AVL tree

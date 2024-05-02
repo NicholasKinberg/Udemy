@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # Imagine you have a map with different cities connected by roads, each road having a certain distance. 
 # The Bellman–Ford algorithm is like a guide that helps you find the shortest path from one city to all other cities, even if some roads have negative lengths. 
 # It’s like a GPS for computers, useful for figuring out the quickest way to get from one point to another in a network.

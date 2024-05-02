@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # hashing is method of sorting and indexing data
 # idea is to allow large amounts of data to be indexed using keys commonly created by formulas
 # use hashing because it is time efficient for searching (O(1) or O(n))

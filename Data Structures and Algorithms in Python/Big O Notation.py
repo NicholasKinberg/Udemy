@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 ### example of O(1)
 ### this is O(1) because I am telling the computer to focus on one int and one int only
 def multiply_numbers(n):

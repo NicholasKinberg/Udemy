@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 import math as math
 # These algorithms are designed to efficiently navigate through data structures to find the desired information, ...
 # ...making them fundamental in various applications such as databases, web search engines, and more.

@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # depth first search algorithm problem
 # output is true or false depending on whether one can access treasure 't' without being barred by obstacle 'X' horizontally or vertically
 # input to function MUST be dictionary

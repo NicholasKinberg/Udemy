@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # In Kruskal’s algorithm, sort all edges of the given graph in increasing order. 
 # Then it keeps on adding new edges and nodes in the MST if the newly added edge does not form a cycle. 
 # It picks the minimum weighted edge at first and the maximum weighted edge at last. 

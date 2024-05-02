@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 # breadth first search algorithm to solve:
 # given map with treasures and obstacles, compute distance (count of ticks) from given initial position to nearest accessible treasure
 # for this program, initial position can be key in dict, then maybe execute while loop to find nearest treasure

@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 import numpy as np
 # Day 1 - 1,23,523,346,34,74,574
 # Day 2 - 1,23,563,672,34,23,567

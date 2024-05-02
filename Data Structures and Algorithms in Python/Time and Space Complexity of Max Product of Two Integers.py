@@ -1,3 +1,5 @@
+# always think of logic of solution before googling code, this is how to avoid cheating
+# look at other people's code to obtain logic, not the code itself
 def max_product(arr):
     # initialize two variables to store two largest numbers
     max1, max2 = 0, 0 # O(1), constant time initialization b/c of initialization equaling an int
