@@ -1,3 +1,4 @@
+# Divide and conquer algorithms are about solving sub-problems of the major problem to yield solution to major problem
 # Problem statement: you are given coins of different denominations and total amount of money; find minimum number of coins that you need to make up a given amount
 
 # treat problem as taking an array of coins

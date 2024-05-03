@@ -1,6 +1,7 @@
 # always think of logic of solution before googling code, this is how to avoid cheating
 # look at other people's code to obtain logic, not the code itself
 # circular doubly linked list goes back and forth, in a circle (like a metro system)
+# self.tail.next = Node(value) just means that self.tail will have in its .next address as Node(value), so Node(value) follows self.tail, and so on
 from random import randint
 class Node:
     def __init__(self, value=None):
