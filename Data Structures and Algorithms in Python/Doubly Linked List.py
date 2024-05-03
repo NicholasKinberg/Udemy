@@ -67,3 +67,5 @@ class DoublyLinkedList:
                 return True
             current_node = current_node.next # in while loop, need to implement current_node = current_node.next to cycle through DLL
         return False
+
+# note that if I set x = y in one line and then set y = 0 in the next, x does NOT take on value of 0, x takes on value of y at time of assignment

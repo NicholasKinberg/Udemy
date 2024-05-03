@@ -62,3 +62,4 @@ class LinkedList:
             self.tail = newNode # newest self.tail becomes newNode
         self.length += 1
         return self.tail
+# note that if I set x = y in one line and then set y = 0 in the next, x does NOT take on value of 0, x takes on value of y at time of assignment

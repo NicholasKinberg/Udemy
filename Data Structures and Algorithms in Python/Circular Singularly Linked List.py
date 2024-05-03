@@ -139,6 +139,6 @@ class CSLinkedList:
         popped_node.next = None # popped node now points to nothing
         self.length -= 1
         return popped_node
-
+# note that if I set x = y in one line and then set y = 0 in the next, x does NOT take on value of 0, x takes on value of y at time of assignment
 
 

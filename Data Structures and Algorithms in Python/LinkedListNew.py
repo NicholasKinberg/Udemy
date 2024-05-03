@@ -169,3 +169,4 @@ linked_list.append(40)
 print(linked_list)
 print(linked_list.remove(0))
 print(linked_list)
+# note that if I set x = y in one line and then set y = 0 in the next, x does NOT take on value of 0, x takes on value of y at time of assignment
