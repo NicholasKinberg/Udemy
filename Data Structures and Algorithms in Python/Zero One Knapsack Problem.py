@@ -28,15 +28,11 @@
             # return 0
 import numpy as np
 def knapsack(items, capacity, currentIndex):
-    profits = sum([sum(i) for i in items]) # this code line needs work to sum one row and not another (sum only profits), will probably need numpy
-    currentItemWeight = items[currentIndex] # this code line needs work to specify currentItemWeight for certain index position
-    currentItemProfit = items[currentIndex] # this code line needs work to specify currentItemProfit for certain index position
-    if capacity <= 0 or currentIndex < 0 or currentIndex > len(profits):
+    if capacity <= 0 or currentIndex < 0 or currentIndex > len(items):
         return 0 # if-else are mutually exclusive, if-elif-else are not mutually exclusive
-    elif currentItemWeight <= capacity:
-        profit1 = currentItemProfit * knapsack(items, capacity-currentItemWeight, currentIndex+1)
-        profit2 = knapsack(items, capacity-currentItemWeight, currentIndex+1)
+    elif items[currentIndex].weight <= capacity:
+        profit1 = items[currentIndex].profit * knapsack(items, capacity-items[currentIndex].weight, currentIndex+1)
+        profit2 = knapsack(items, capacity-items[currentIndex].weight, currentIndex+1)
         return max(profit1, profit2)
     else:
-        return 0
-    
+        return 0 # assuming that first column is titled "weight" and second column is titled "profit"
