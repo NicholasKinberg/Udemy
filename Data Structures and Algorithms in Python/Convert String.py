@@ -39,7 +39,7 @@ def findMinOperation(S1, S2, index1, index2):
     if S1[index1] == S2[index2]: # adding one to index1 and index2 to perform delete, insert, and replace operations to count minimum number of operations
         return findMinOperation(S1, S2, index1+1, index2+1) # recursion
     else:
-        deleteOp = 1 + findMinOperation(S1, S2, index1, index2+1)
-        insertOp = 1 + findMinOperation(S1, S2, index1+1, index2)
-        replaceOp = 1 + findMinOperation(S1, S2, index1+1, index2+1)
+        deleteOp = 1 + findMinOperation(S1, S2, index1, index2+1) # S2 is one character longer than S1, so delete extra character from S2
+        insertOp = 1 + findMinOperation(S1, S2, index1+1, index2) # S2 is one character shorter than S1, so insert extra character into S2
+        replaceOp = 1 + findMinOperation(S1, S2, index1+1, index2+1) # S2 and S1 have same length, so replace character from S2 to make it equal to S1
     return min(deleteOp, insertOp, replaceOp)

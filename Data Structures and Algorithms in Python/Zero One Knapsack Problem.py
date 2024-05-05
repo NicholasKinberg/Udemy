@@ -26,7 +26,6 @@
             # return max(profit1, profit2)
         # else
             # return 0
-import numpy as np
 def knapsack(items, capacity, currentIndex):
     if capacity <= 0 or currentIndex < 0 or currentIndex > len(items):
         return 0 # if-else are mutually exclusive, if-elif-else are not mutually exclusive

@@ -1,7 +1,7 @@
 # Problem statement: given N, find the number of ways to express N as a sum of 1, 3, and 4
 # original algorithm (divide and conquer algorithm)
 def numberFactor(N):
-    if N in (0, 1, 2):
+    if N in [0, 1, 2]:
         return 1
     if N == 3:
         return 2
@@ -10,7 +10,7 @@ def numberFactor(N):
 
 # top-down approach where instead of solving the same problem multiple times, we implement a dictionary to store values for key N
 def numberFactorTD(N, dp): # variable where dp is dynamic programming dictionary
-    if N in (0, 1, 2):
+    if N in [0, 1, 2]:
         return 1
     if N == 3:
         return 2
