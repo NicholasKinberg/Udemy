@@ -3,7 +3,7 @@
 import numpy as np
 
 def determinant(a):
-    return round(np.linalg.det(np.matrix(a)))
+    return round(np.linalg.det(np.matrix(a))) # this is a bad solution because anyone can call an already-built package; the problem asks us to build our own determinant function
 ################################################
 def determinant(matrix):
     #your code here
@@ -23,15 +23,20 @@ def determinant(matrix):
         # create a sub matrix to find the determinant
         if l!=2:
             sub_matrix = []               
-            sub_matrix = [(row[0:j]+row[j+1:]) for row in matrix[1:]]
-        result = result + (-1)**j * matrix[0][j] * determinant(sub_matrix)
+            sub_matrix = [(row[0:j]+row[j+1:]) for row in matrix[1:]] # matrix[1:] to isolate sub-matrices from overarching matrix
+        result = result + (-1)**j * matrix[0][j] * determinant(sub_matrix) # would need to use recursion for NxN matrices of increasing size
     return result
+####
+# to build the above function with recursion, I would start with the following logic
+# result = result + (-1)**j * matrix[0][j] * determinant(sub_matrx)
+    # I would use the above line to (1) initialize a cofactor, (2) multiply by the sub-matrix, (3) obtain the determinant of the sub_matrix through recursion, and (4) add the product of the first three items to the previous result
+    # I would then initialize sub_matrix above line 31 here to add the rows together of row[0:j] and row[j+1:] for rows starting with second row (matrix[1:]) because Python indexes starting with 0
 ################################################
 def determinant(m):
     ans,sizeM = 0, len(m)
     if sizeM == 1: return m[0][0]
     for n in range(sizeM):
-        ans+= (-1)**n * m[0][n] * determinant([ m[i][:n]+m[i][n+1:] for i in range(1,sizeM) ])
+        ans+= (-1)**n * m[0][n] * determinant([ m[i][:n]+m[i][n+1:] for i in range(1,sizeM) ]) # NEED RECURSION FOR THIS FUNCTION; this is a perfect case of solving a larger problem by solving repeating sub-problems
     return ans
 ################################################
 def sub_determinant(matrix, i):
