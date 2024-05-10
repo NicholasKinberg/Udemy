@@ -90,33 +90,44 @@ printAllUniqueParts(3)
 print('All Unique Partitions of 4')
 printAllUniqueParts(4)
 
+print('All Unique Partitions of 10')
+printAllUniqueParts(10)
+
 # This code is contributed 
 # by JoshuaWorthington
 #################################################
-def partitions(n):
-  """Return a list of all the partitions of n."""
-  if n == 0:
-    return [[]]
-  else:
-    result = []
-    for i in range(1, n + 1):
-      for partition in partitions(n - i):
-        result.append([i] + partition)
-    return result
+# import statistics
+# import numpy as np
+# def partitions(n):
+# 	if n == 0:
+# 		return [[]]
+# 	else:
+# 		result = []
+# 		for i in range(1, n + 1):
+# 			for partition in partitions(n - i):
+# 				result.append([i] + partition)
+# 		return result
+# 	# max = np.amax(result)
+# 	# min = np.amin(result)
+# 	# rangeOfList = max - min
+# 	# average = np.average(result)
+# 	# median = statistics.median(result)
+# 	# return "Range: " + str(rangeOfList) + " Average: " + str(average) + " Median: " + str(median)
 
-print(partitions(5))
+# print(partitions(5))
 #################################################
-def P(n):
-    # base case of recursion: zero is the sum of the empty list
-    if n == 0:
-        yield []
-        return
+# def P(n):
+#     # base case of recursion: zero is the sum of the empty list
+#     if n == 0:
+#         yield []
+#         return
 
-    for p in P(n-1):        
-        p.append(1)
-        yield p
-        p.pop()
-        if p and (len(p) < 2 or p[-2] > p[-1]):
-            p[-1] += 1
-            yield p
+#     for p in P(n-1):        
+#         p.append(1)
+#         yield p
+#         p.pop()
+#         if p and (len(p) < 2 or p[-2] > p[-1]):
+#             p[-1] += 1
+#             yield p
+# print(P(6))
 #################################################
