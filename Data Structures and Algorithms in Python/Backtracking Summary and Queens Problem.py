@@ -48,7 +48,6 @@ class NQueens:
         for i in range(self.n):
             if self.chess_table[row_index][i] == 1:
                 return False # returns False whenever we encounter a row that has a queen
-        
         # top left to bottom right
         j = col_index
         for i in range(row_index, -1, -1): # range(row_index, -1, -1) to check diagonally
