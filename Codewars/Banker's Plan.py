@@ -8,6 +8,10 @@
 # all amounts f0..fn-1, c0..cn-1 are truncated by the bank to their integral part
 # Given f0, p, c0, i the banker guarantees that John will be able to go on that way until the nth year.
 
+
+# Important to note: use _ for indefinite for-loop range, and return True as default as in below block of code
+# f and c calculated as normal, just that if f is less than 0, return False
+# Don't overthink your programs; you could have thought of this problem as just indefinite for-loop, calculate f and c, if f is less than 0 return False, otherwise True
 def fortune(f, p, c, n, i):
     for _ in range(n-1):
         f = int(f * (100 + p) / 100 - c)
