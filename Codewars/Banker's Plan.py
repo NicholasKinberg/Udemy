@@ -13,34 +13,35 @@
 # f and c calculated as normal, just that if f is less than 0, return False
 # Don't overthink your programs; you could have thought of this problem as just indefinite for-loop, calculate f and c, if f is less than 0 return False, otherwise True
 def fortune(f, p, c, n, i):
-    for _ in range(n-1):
-        f = int(f * (100 + p) / 100 - c)
-        c = int(c * (100 + i) / 100)
-        if f < 0:
+    for _ in range(n-1): # indefinite for-loop
+        f = int(f * (100 + p) / 100 - c) # calculating principal over time
+        c = int(c * (100 + i) / 100) # calculating withdrawal over time
+        if f < 0: # if principal drops below 0, return False
             return False
-    return True
+    return True # otherwise return True
 
 def fortune(money, interest, withdraw, years, inflation):
-    interest = 1 + (interest / 100)
-    inflation = 1 + (inflation / 100)
-    for _ in range(years - 1):
-        money = int(money * interest - withdraw)
-        if money < 0:
+    interest = 1 + (interest / 100) # interest rate
+    inflation = 1 + (inflation / 100) # inflation rate
+    for _ in range(years - 1): # indefinite for-loop
+        money = int(money * interest - withdraw) # principal over time
+        if money < 0: 
             return False
-        withdraw *= inflation
+        withdraw *= inflation # withdrawal multiplied by inflation
     return True
 
 def fortune(f0, p, c0, n, i):
     f = f0
     c = c0
     
-    for year in range(n-1):
+    for _ in range(n-1): # indefinite for-loop
         f = int(f + f * (p/100)) - int(c)
         c = int(c + c * (i/100))
             
     return f >= 0
 
-fortune=F=lambda f,p,c,n,i:F(f*(100+p)//100-c,p,c*(100+i)//100,n-1,i)if n>1 else f>=0
+fortune=F=lambda f,p,c,n,i:F(f*(100+p)//100-c,p,c*(100+i)//100,n-1,i)if n>1 else f>=0 # anonymous Lambda formula
+# lambda names parameters and then initiates the function
 
 def fortune(f0, p, c0, n, i):  
     if n == 1:
