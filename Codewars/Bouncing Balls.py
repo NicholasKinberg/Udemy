@@ -56,3 +56,8 @@ def bouncingBall(h, bounce, window):
     if h <= 0 or bounce <= 0 or bounce >= 1 or window >= h:
         return -1
     return 2 + bouncingBall(h * bounce, bounce, window)
+
+import math
+
+def bouncingBall(h, bounce, window):
+    return 2 * int(math.log(window/h) / math.log(bounce)) + 1 if h > 0 and 0 < bounce < 1 and window < h else -1
