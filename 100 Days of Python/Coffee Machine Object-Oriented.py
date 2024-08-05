@@ -81,19 +81,30 @@ while is_on == True:
             if transactionSuccessful(payment, drink["cost"]):
                 makeCoffee(choice, drink["ingredients"])
 
-from menu import Menu, MenuItem
+from menu import Menu
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 coffee = CoffeeMaker()
-report = coffee.report()
-resourceSufficient = coffee.is_resource_sufficient()
-madeCoffee = coffee.make_coffee()
-
 items = Menu()
-getItems = items.get_items()
-order = items.find_drink("cappuccino")
-
 money = MoneyMachine()
-report = money.report()
-numberOfCoins = money.process_coins()
-payment = money.make_payment()
+
+is_on = True
+while is_on == True:
+
+
+    options = items.get_items()
+    choice = input(f"What would you like? ({options})? ")
+
+
+    if choice == "off":
+        is_on = False
+
+
+    elif choice == "report":
+        coffee.report()
+        money.report()
+
+    else:
+        drink = items.find_drink(choice)
+        if coffee.is_resource_sufficient(drink) and money.make_payment(drink.cost):
+            coffee.make_coffee(drink)
